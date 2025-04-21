@@ -1,0 +1,1 @@
+# everscale-onchain-site-contract
