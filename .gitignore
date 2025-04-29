@@ -1,0 +1,10 @@
+node_modules/
+.idea/
+.env
+migration-log.json
+sites/
+
+deployments/
+.cache/
+
+.DS_Store
