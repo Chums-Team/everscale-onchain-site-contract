@@ -8,6 +8,9 @@ and accessed via the browser from [Chums](https://chums.chat/) messenger or via 
 
 This scripts uses npm and node.js. Be sure you have them installed.
 
+Onchain storage of the site's HTML content is suggested primarily as a proof of concept. 
+Until BigCell or DriveChain are implemented, its use may be limited.
+
 ## Install dependencies
 
 ```shell

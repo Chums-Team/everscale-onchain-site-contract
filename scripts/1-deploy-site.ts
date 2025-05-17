@@ -7,6 +7,7 @@ const minify = require('html-minifier').minify;
 const program = new Command();
 
 const MESSAGE_SIZE = 60 * 1000;
+const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 const TEXT_HTML = "text/html";
 const TEXT_CSS = "text/css";
 
@@ -30,6 +31,11 @@ async function main() {
   }
   if (!fs.existsSync(file)) {
     throw new Error(`Provided file '${file}' does not exist`);
+  }
+  // Onchain storage of the site's HTML content is suggested primarily as a proof of concept.
+  // Until BigCell or DriveChain are implemented, its use may be limited.
+  if (fs.statSync(file).size > MAX_FILE_SIZE) {
+    throw new Error(`File '${file}' is too large. Max size is 2MB`);
   }
 
   console.log(`Reading file: ${file} with content type: ${contentType} and charset: ${charset}`);
